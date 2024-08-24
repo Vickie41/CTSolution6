@@ -1,0 +1,85 @@
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal;
+@using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+@model CTSolution.Models.TaxPayerInfo
+
+
+<h1>Create</h1>
+
+<h4>TaxPayerInfo</h4>
+<hr />
+<form asp-action="Create">
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.PersonName)
+        @Html.TextBoxFor(model => model.PersonName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PersonName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.NRCNo)
+        @Html.TextBoxFor(model => model.NRCNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.NRCNo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BusinessName)
+        @Html.TextBoxFor(model => model.BusinessName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BusinessName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CompanyName)
+        @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CompanyName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BizRegNumber)
+        @Html.TextBoxFor(model => model.BizRegNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BizRegNumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TIN_Number)
+        @Html.TextBoxFor(model => model.TIN_Number, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TIN_Number)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.BusinessType)
+        @Html.DropDownListFor(model => model.BusinessType,
+        (SelectList)ViewData["BusinessTypes"], 
+        "Select Business Type",
+        new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.BusinessType)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CommercialLicense)
+        @Html.TextBoxFor(model => model.CommercialLicense, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CommercialLicense)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.CommercialLicenseDate)
+        @Html.TextBoxFor(model => model.CommercialLicenseDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(model => model.CommercialLicenseDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNo)
+        @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PhoneNo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Address)
+        @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Address)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Township)
+        @Html.TextBoxFor(model => model.Township, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Township)
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

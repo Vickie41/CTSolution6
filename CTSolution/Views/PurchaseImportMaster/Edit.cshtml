@@ -1,0 +1,56 @@
+﻿@model CTSolution.Models.PurchaseImportMaster
+
+<h1>Edit Purchase Import Master</h1>
+
+<form asp-action="Edit">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="PurchaseImportPkid" />
+
+    @Html.HiddenFor(model => model.TransactionID, new { Value = Model.TransactionID ?? DateTime.Now.ToString("yyyyMMddHHmmssfff") })
+    <div class="form-group">
+        @Html.LabelFor(model => model.PTK_FormNo)
+        @Html.TextBoxFor(model => model.PTK_FormNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PTK_FormNo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImporterPkid)
+        @Html.DropDownListFor(model => model.ImporterPkid, (SelectList)ViewBag.Importers, "Select Importer", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ImporterPkid)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DeclarationFormNo)
+        @Html.TextBoxFor(model => model.DeclarationFormNo, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.DeclarationFormNo)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.DeclarationFormDate)
+        @Html.EditorFor(model => model.DeclarationFormDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.DeclarationFormDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TransactionDate)
+        @Html.EditorFor(model => model.TransactionDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TransactionDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TaxOffice)
+        @Html.TextBoxFor(model => model.TaxOffice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TaxOffice)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TaxOfficer)
+        @Html.TextBoxFor(model => model.TaxOfficer, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.TaxOfficer)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Note)
+        @Html.TextBoxFor(model => model.Note, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Note)
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

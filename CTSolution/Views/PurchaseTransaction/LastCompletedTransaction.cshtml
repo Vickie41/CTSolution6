@@ -1,0 +1,38 @@
+﻿@model CTSolution.Models.PurchaseTransaction
+
+<h1>Last Completed Transaction</h1>
+
+@if (Model != null)
+{
+    <div>
+        <h4>PurchaseTransaction</h4>
+        <dl class="dl-horizontal">
+            <dt>TransactionID</dt>
+            <dd>@Model.TransactionID</dd>
+            <dt>TransactionDate</dt>
+            <dd>@Model.TransactionDate?.ToString("dd-MM-yyyy")</dd>
+            <dt>ChalenNo</dt>
+            <dd>@Model.ChalenNo</dd>
+            <dt>TaxAmt</dt>
+            <dd>@Model.TaxAmt</dd>
+            <dt>PaidAmt</dt>
+            <dd>@Model.PaidAmt</dd>
+            <dt>BalanceAmt</dt>
+            <dd>@Model.BalanceAmt</dd>
+            <dt>IsCompleted</dt>
+            <dd>@Model.IsCompleted</dd>
+            <dt>TaxOffice</dt>
+            <dd>@Model.TaxOffice</dd>
+            <dt>TaxOfficer</dt>
+            <dd>@Model.TaxOfficer</dd>
+            <dt>Note</dt>
+            <dd>@Model.Note</dd>
+        </dl>
+    </div>
+}
+else
+{
+    <div>
+        <h4>No completed transactions found.</h4>
+    </div>
+}

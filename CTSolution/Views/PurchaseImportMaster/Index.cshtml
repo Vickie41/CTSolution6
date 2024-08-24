@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CTSolution.Models.PurchaseImportMaster>
+
+<h1>Purchase Import Master</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+           
+            
+            <th>
+                @Html.DisplayNameFor(model => model.ImporterPkid)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.DeclarationFormNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeclarationFormDate)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.TaxOffice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxOfficer)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DeclarationFormNo)
+                </td>
+                <td>
+                    @item.DeclarationFormDate.ToString("dd-MM-yyyy")
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxOffice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxOfficer)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note)
+                </td>
+
+                <td>
+
+                    <a href="@Url.Action("Edit", "PurchaseImportMaster", new { id = item.PurchaseImportPkid })" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="@Url.Action("Delete", "PurchaseImportMaster", new { id = item.PurchaseImportPkid })" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="@Url.Action("Details", "PurchaseImportMaster", new { id = item.PurchaseImportPkid })" class="btn btn-danger btn-sm">Detail</a>
+                    <a href="@Url.Action("Index", "PurchaseTransaction", new { id = item.PurchaseImportPkid, transactionID = item.TransactionID, transactionDate = item.TransactionDate, taxOffice = item.TaxOffice, taxofficer = item.TaxOfficer,taxAmt = item.TaxAmt })" class="btn btn-danger btn-sm">Pay</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

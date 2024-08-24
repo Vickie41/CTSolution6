@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CTSolution.Models.PurchaseTransaction>
+
+<h1>Purchase Transactions</h1>
+
+<p>
+    <a href="@Url.Action("Create", "PurchaseTransaction", new { transactionID = ViewBag.TransactionID, transactionDate = ViewBag.TransactionDate, taxOffice = ViewBag.TaxOffice, taxofficer = ViewBag.TaxOfficer, taxAmt = ViewBag.TaxAmt })" class="btn btn-primary">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Transaction ID
+            </th>
+            <th>
+                Chalen No
+            </th>
+            <th>
+                Tax Amount
+            </th>
+            <th>
+                Paid Amount
+            </th>
+            <th>
+                Balance Amount
+            </th>
+            <th>
+                Is Completed
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TransactionID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChalenNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaxAmt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidAmt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BalanceAmt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsCompleted)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TransactionID" class="btn btn-secondary">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.TransactionID" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

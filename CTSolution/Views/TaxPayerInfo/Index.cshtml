@@ -1,0 +1,112 @@
+﻿@model IEnumerable<CTSolution.Models.TaxPayerInfo>
+
+
+
+<h1>Tax Payer Info</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.PersonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NRCNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusinessName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BizRegNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TIN_Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusinessType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommercialLicense)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommercialLicenseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Township)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.PersonName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NRCNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BusinessName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BizRegNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TIN_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BusinessType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommercialLicense)
+                </td>
+                <td>
+                    @item.CommercialLicenseDate.ToString("dd-MM-yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Township)
+                </td>
+
+                
+                <td>
+
+                    <a href="@Url.Action("Edit", "TaxPayerInfo", new { id = item.TaxPayerPkid })" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="@Url.Action("Delete", "TaxPayerInfo", new { id = item.TaxPayerPkid })" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="@Url.Action("Details", "TaxPayerInfo", new { id = item.TaxPayerPkid })" class="btn btn-danger btn-sm">Detail</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
