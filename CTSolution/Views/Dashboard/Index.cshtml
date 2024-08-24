@@ -1,0 +1,44 @@
+﻿@model CTSolution.Models.DashboardViewModel
+
+<div class="container">
+    <h1>Dashboard</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Total Transactions
+                </div>
+                <div class="card-body">
+                    <h2>@Model.TotalTransactions</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Total Tax Collected
+                </div>
+                <div class="card-body">
+                    <h2>@Model.TotalTaxCollected.ToString("C")</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Recent Transactions
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        @foreach (var transaction in Model.RecentTransactions)
+                        {
+                            <li class="list-group-item">
+                                <strong>@transaction.Date.ToShortDateString()</strong>: @transaction.Amount.ToString("C")
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

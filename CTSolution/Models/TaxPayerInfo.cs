@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CTSolution.Models
 {
@@ -55,10 +56,14 @@ namespace CTSolution.Models
             "Wholesaler",
             "Retailer"
          };
+        [NotMapped]
 
         public string TransactionID { get; internal set; }
+        [NotMapped]
         public DateTime TransactionDate { get; internal set; }
+        [NotMapped]
         public string TaxOffice { get; internal set; }
+        [NotMapped]
         public string TaxOfficer { get; internal set; }
     }
 }

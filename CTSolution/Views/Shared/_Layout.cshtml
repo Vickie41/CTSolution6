@@ -7,54 +7,78 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CTSolution.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            font-size: .875rem;
+        }
+
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 250px;
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px;
+        }
+
+            .sidebar a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    color: #adb5bd;
+                    text-decoration: none;
+                }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 250px);
+            left: 250px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="TaxPayerInfo" asp-action="Index">အခွန်ထမ်းအချက်အလက်</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-            </div>
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="PurchaseImportMaster" asp-action="Index">ပြည်ပမှ၀ယ်ယူတင်သွင်းခြင်း</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-            </div>
-           <!-- <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="PurchaseImportDetail" asp-action="Index">PurchaseImportDetail</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-             </div>  -->
-
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="PurchaseTransaction" asp-action="Index">Purchase Transaction</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-            </div>
-        </nav>
-    </header>
-    <div class="container">
+    <div class="sidebar">
+        <h4>Tax Credit System</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="TaxPayerInfo" asp-action="Index">အခွန်ထမ်းအချက်အလက်</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="PurchaseImportMaster" asp-action="Index">
+                    ပြည်ပမှ၀ယ်ယူတင်သွင်းခြင်း
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="PurchaseImportDetail" asp-action="Index">Purchase Import Detail</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="Index">Purchase Transaction</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="main-content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - CTSolution - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - CTSolution - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

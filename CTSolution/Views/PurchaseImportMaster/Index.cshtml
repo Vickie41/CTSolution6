@@ -68,7 +68,7 @@
                     <a href="@Url.Action("Edit", "PurchaseImportMaster", new { id = item.PurchaseImportPkid })" class="btn btn-warning btn-sm">Edit</a>
                     <a href="@Url.Action("Delete", "PurchaseImportMaster", new { id = item.PurchaseImportPkid })" class="btn btn-danger btn-sm">Delete</a>
                     <a href="@Url.Action("Details", "PurchaseImportMaster", new { id = item.PurchaseImportPkid })" class="btn btn-danger btn-sm">Detail</a>
-                    <a href="@Url.Action("Index", "PurchaseTransaction", new { id = item.PurchaseImportPkid, transactionID = item.TransactionID, transactionDate = item.TransactionDate, taxOffice = item.TaxOffice, taxofficer = item.TaxOfficer,taxAmt = item.TaxAmt })" class="btn btn-danger btn-sm">Pay</a>
+                    <a href="@Url.Action("Create", "PurchaseTransaction", new { id = item.PurchaseImportPkid, transactionID = item.TransactionID, transactionDate = item.TransactionDate, taxOffice = item.TaxOffice, taxofficer = item.TaxOfficer,taxAmt = item.TaxAmt })" class="btn btn-danger btn-sm">Pay</a>
                 </td>
             </tr>
         }

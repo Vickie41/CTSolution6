@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
@@ -18,6 +19,8 @@ namespace CTSolution.Models
         public DbSet<PurchaseImportDetail> PurchaseImportDetail { get; set; }
 
         public DbSet<PurchaseTransaction> PurchaseTransaction { get; set; }
+
+       
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

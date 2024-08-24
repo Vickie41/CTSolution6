@@ -9,117 +9,121 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CTSolution
 build_property.RootNamespace = CTSolution
-build_property.ProjectDir = D:\Su Myat Tun\Testing\CTSolution - Copy - Copy\CTSolution\
+build_property.ProjectDir = D:\Su Myat Tun\Testing\CTSolutionProject\CTSolution\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Su Myat Tun\Testing\CTSolution - Copy - Copy\CTSolution
+build_property.MSBuildProjectDirectory = D:\Su Myat Tun\Testing\CTSolutionProject\CTSolution
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/Home/Index.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/Dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/Home/Privacy.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportDetail/Create.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportDetail/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnREZXRhaWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportDetail/Delete.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportDetail/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnREZXRhaWxcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportDetail/Detail.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportDetail/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnREZXRhaWxcRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportDetail/Edit.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportDetail/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnREZXRhaWxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportDetail/Index.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportDetail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnREZXRhaWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportMaster/Create.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportMaster/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnRNYXN0ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportMaster/Delete.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportMaster/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnRNYXN0ZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportMaster/Details.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportMaster/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnRNYXN0ZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportMaster/Edit.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportMaster/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnRNYXN0ZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseImportMaster/Index.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseImportMaster/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VJbXBvcnRNYXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseTransaction/Create.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseTransaction/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUcmFuc2FjdGlvblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseTransaction/Delete.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseTransaction/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUcmFuc2FjdGlvblxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseTransaction/Edit.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseTransaction/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUcmFuc2FjdGlvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseTransaction/Index.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseTransaction/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUcmFuc2FjdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/PurchaseTransaction/LastCompletedTransaction.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/PurchaseTransaction/LastCompletedTransaction.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVyY2hhc2VUcmFuc2FjdGlvblxMYXN0Q29tcGxldGVkVHJhbnNhY3Rpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/Shared/Error.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/TaxPayerInfo/Create.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/TaxPayerInfo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4UGF5ZXJJbmZvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/TaxPayerInfo/Delete.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/TaxPayerInfo/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4UGF5ZXJJbmZvXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/TaxPayerInfo/Details.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/TaxPayerInfo/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4UGF5ZXJJbmZvXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/TaxPayerInfo/Edit.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/TaxPayerInfo/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4UGF5ZXJJbmZvXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/TaxPayerInfo/Index.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/TaxPayerInfo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGF4UGF5ZXJJbmZvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/_ViewImports.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/_ViewStart.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Su Myat Tun/Testing/CTSolution - Copy - Copy/CTSolution/Views/Shared/_Layout.cshtml]
+[D:/Su Myat Tun/Testing/CTSolutionProject/CTSolution/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-j1ejoxu9lv

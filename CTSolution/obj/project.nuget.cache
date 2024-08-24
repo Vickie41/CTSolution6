@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sNz8z7a7cHfSsEwWi2+5WuVFHQPuMZHtjocoK1xNLjxvFhaHpFfzkI4QoDaWYb/2YApdjdcR7IjF30DYIHxfVg==",
+  "dgSpecHash": "tA8m7eNuoygytVbjHnsuht+X9D4d0uU5r8shNaTKilUSbAxcAw5e3P4vZApiHbivyEo5B9Ydu/hBvuvN7YyJnw==",
   "success": true,
-  "projectFilePath": "D:\\Su Myat Tun\\Testing\\CTSolution - Copy - Copy\\CTSolution\\CTSolution.csproj",
+  "projectFilePath": "D:\\Su Myat Tun\\Testing\\CTSolutionProject\\CTSolution\\CTSolution.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaung\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\kaung\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
