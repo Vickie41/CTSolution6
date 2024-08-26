@@ -2,33 +2,100 @@
 
 <h1>Create Purchase Transaction</h1>
 
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create" method="post">
-            <input type="hidden" asp-for="TransactionID" />
-            <input type="hidden" asp-for="TransactionDate" />
-            <input type="hidden" asp-for="TaxOffice" />
-            <input type="hidden" asp-for="TaxOfficer" />
-            <input type="hidden" asp-for="TaxAmt" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create" method="post">
+                <input type="hidden" asp-for="TransactionID" />
+                <input type="hidden" asp-for="TransactionDate" />
+                <input type="hidden" asp-for="TaxOffice" />
+                <input type="hidden" asp-for="TaxOfficer" />
+                <input type="hidden" asp-for="TaxAmt" />
 
-            <div class="form-group">
-                <label asp-for="ChalenNo" class="control-label"></label>
-                <input asp-for="ChalenNo" class="form-control" />
-                <span asp-validation-for="ChalenNo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="PaidAmt" class="control-label"></label>
-                <input asp-for="PaidAmt" class="form-control" />
-                <span asp-validation-for="PaidAmt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Note" class="control-label"></label>
-                <input asp-for="Note" class="form-control" />
-                <span asp-validation-for="Note" class="text-danger"></span>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Save</button>
-        </form>
+                <!-- Transaction Details -->
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label asp-for="TransactionID">Transaction ID:</label>
+                        </td>
+                        <td>
+                            <input asp-for="TransactionID" class="form-control" readonly />
+                        </td>
+                        <td>
+                            <label asp-for="TransactionDate">Transaction Date:</label>
+                        </td>
+                        <td class="form-group">
+                            <input class="form-control" readonly type="datetime-local"
+                                   id="TransactionDate"
+                                   name="TransactionDate"
+                                   value="@ViewBag.FormattedTransactionDate" />
+                            @Html.ValidationMessageFor(model => model.TransactionDate)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label asp-for="TaxOffice">Tax Office:</label>
+                        </td>
+                        <td>
+                            <input asp-for="TaxOffice" class="form-control" readonly />
+                        </td>
+                        <td>
+                            <label asp-for="TaxOfficer">Tax Officer:</label>
+                        </td>
+                        <td>
+                            <input asp-for="TaxOfficer" class="form-control" readonly />
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Payment Details -->
+                <table class="table">
+                    <tr>
+                        <td>
+                            <label asp-for="ChalenNo" class="control-label"></label>
+                        </td>
+                        <td>
+                            <input asp-for="ChalenNo" class="form-control" />
+                            <span asp-validation-for="ChalenNo" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label asp-for="PaidAmt" class="control-label"></label>
+                        </td>
+                        <td>
+                            <input asp-for="PaidAmt" class="form-control" />
+                            <span asp-validation-for="PaidAmt" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label asp-for="Note" class="control-label"></label>
+                        </td>
+                        <td>
+                            <input asp-for="Note" class="form-control" />
+                            <span asp-validation-for="Note" class="text-danger"></span>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Alert Message -->
+                @if (TempData["ZeroBalanceMessage"] != null)
+                {
+                    <div class="alert alert-info">
+                        <p>@TempData["ZeroBalanceMessage"]</p>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info">
+                        <p>Remaining Amount to Pay: @Model.BalanceAmt</p>
+                    </div>
+                }
+
+                <button type="submit" class="btn btn-primary">Pay Now</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -41,3 +108,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+

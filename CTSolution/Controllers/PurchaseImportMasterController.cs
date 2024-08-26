@@ -56,12 +56,13 @@ namespace CTSolution.Controllers
 
 
 
-        // Get: PurchaseImportMaster/Create
+        // GET: PurchaseImportMaster/Create
         public IActionResult Create()
         {
             var model = new PurchaseImportMaster
             {
-                TransactionID = DateTime.Now.ToString("yyyyMMddHHmmssfff")
+                // Do not set TransactionID here
+                // TransactionID will be set in the POST Create action
             };
 
             var importers = _context.TaxPayerInfo
@@ -85,8 +86,11 @@ namespace CTSolution.Controllers
         {
             try
             {
-               
+                // Set the TransactionID here
                 purchaseImportMaster.TransactionID = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+
+                // Set the TransactionDate here
+                purchaseImportMaster.TransactionDate = DateTime.Now;
 
                 _context.Add(purchaseImportMaster);
 
@@ -96,30 +100,29 @@ namespace CTSolution.Controllers
             }
             catch (DbUpdateException dbEx)
             {
-                
                 Console.WriteLine($"Database update error: {dbEx.Message}");
                 ModelState.AddModelError("", "An error occurred while saving data. Please try again.");
             }
             catch (Exception ex)
             {
-                
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 ModelState.AddModelError("", "An unexpected error occurred. Please try again.");
             }
 
-           
+            // Reload importers if there was an error
             var importers = _context.TaxPayerInfo
                 .Where(t => t.BusinessType == "Importer")
                 .Select(t => new SelectListItem
                 {
                     Value = t.TaxPayerPkid.ToString(),
-                    Text = t.PersonName 
+                    Text = t.PersonName
                 })
                 .ToList();
 
             ViewBag.Importers = importers;
             return View(purchaseImportMaster);
         }
+
 
         // GET: PurchaseImportMaster/Edit/5
         public async Task<IActionResult> Edit(int id)

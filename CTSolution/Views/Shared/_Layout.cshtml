@@ -10,6 +10,9 @@
     <style>
         body {
             font-size: .875rem;
+            background-color: #f0f4f8; /* Soft light background */
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .sidebar {
@@ -18,34 +21,58 @@
             top: 0;
             left: 0;
             z-index: 100;
-            width: 250px;
-            background-color: #343a40;
-            color: #fff;
-            padding: 15px;
+            width: 220px;
+            background-color: #ffffff; /* Clean white background */
+            color: #333;
+            padding: 20px;
+            border-right: 1px solid #ddd; /* Light border for separation */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
+            .sidebar h4 {
+                font-size: 1.25rem;
+                margin-bottom: 20px;
+                color: #5b5b5b; /* Soft gray */
+            }
+
             .sidebar a {
-                color: #fff;
+                color: #333;
                 text-decoration: none;
+                display: block;
+                padding: 10px;
+                border-radius: 5px; /* Rounded corners */
+                transition: background-color 0.3s ease;
             }
 
                 .sidebar a:hover {
-                    color: #adb5bd;
-                    text-decoration: none;
+                    background-color: #e7f1ff; /* Light blue hover effect */
                 }
 
         .main-content {
-            margin-left: 250px;
+            margin-left: 220px;
             padding: 20px;
+            transition: margin-left 0.3s ease;
         }
 
         .footer {
-            position: fixed;
-            bottom: 0;
-            width: calc(100% - 250px);
-            left: 250px;
+            padding: 20px 0;
+            width: 100%;
+            background-color: #ffffff; /* Clean white background */
+            color: #5b5b5b; /* Soft gray */
+            border-top: 1px solid #ddd; /* Light border for separation */
+            text-align: center;
+            position: relative;
         }
+
+            .footer a {
+                color: #007bff; /* Calming blue */
+            }
+
+                .footer a:hover {
+                    color: #0056b3; /* Darker blue for hover effect */
+                }
     </style>
+    @RenderSection("Styles", required: false) <!-- This allows custom styles in individual views -->
 </head>
 <body>
     <div class="sidebar">
@@ -55,20 +82,20 @@
                 <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="TaxPayerInfo" asp-action="Index">အခွန်ထမ်းအချက်အလက်</a>
+                <a class="nav-link" asp-controller="TaxPayerInfo" asp-action="Index">Tax Payer Info</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="PurchaseImportMaster" asp-action="Index">
-                    ပြည်ပမှ၀ယ်ယူတင်သွင်းခြင်း
-                </a>
+                <a class="nav-link" asp-controller="PurchaseImportMaster" asp-action="Index">Import Master</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="PurchaseImportDetail" asp-action="Index">Purchase Import Detail</a>
+                <a class="nav-link" asp-controller="PurchaseImportDetail" asp-action="Index">Import Detail</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="Index">Purchase Transaction</a>
             </li>
-            
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="LastCompletedTransaction">Completed Transactions</a>
+            </li>
         </ul>
     </div>
     <div class="main-content">
@@ -76,7 +103,7 @@
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-center">
         <div class="container">
             &copy; 2024 - CTSolution - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>

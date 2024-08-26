@@ -1,38 +1,98 @@
-﻿@model CTSolution.Models.PurchaseTransaction
+﻿@model IEnumerable<CTSolution.Models.PurchaseTransaction>
 
-<h1>Last Completed Transaction</h1>
+@section Styles {
+    <style>
+        .transaction-list {
+            padding: 20px;
+        }
 
-@if (Model != null)
-{
-    <div>
-        <h4>PurchaseTransaction</h4>
-        <dl class="dl-horizontal">
-            <dt>TransactionID</dt>
-            <dd>@Model.TransactionID</dd>
-            <dt>TransactionDate</dt>
-            <dd>@Model.TransactionDate?.ToString("dd-MM-yyyy")</dd>
-            <dt>ChalenNo</dt>
-            <dd>@Model.ChalenNo</dd>
-            <dt>TaxAmt</dt>
-            <dd>@Model.TaxAmt</dd>
-            <dt>PaidAmt</dt>
-            <dd>@Model.PaidAmt</dd>
-            <dt>BalanceAmt</dt>
-            <dd>@Model.BalanceAmt</dd>
-            <dt>IsCompleted</dt>
-            <dd>@Model.IsCompleted</dd>
-            <dt>TaxOffice</dt>
-            <dd>@Model.TaxOffice</dd>
-            <dt>TaxOfficer</dt>
-            <dd>@Model.TaxOfficer</dd>
-            <dt>Note</dt>
-            <dd>@Model.Note</dd>
-        </dl>
-    </div>
+        .transaction-card {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .transaction-card-header {
+            background-color: #f5f5f5;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .transaction-card-body {
+            padding: 15px;
+        }
+
+        .transaction-details dt {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .transaction-details dd {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .no-transactions {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #888;
+        }
+    </style>
 }
-else
-{
-    <div>
-        <h4>No completed transactions found.</h4>
-    </div>
-}
+
+<div class="transaction-list">
+    <h2 class="mb-4">Completed Transactions</h2>
+
+    @if (Model.Any())
+    {
+        @foreach (var transaction in Model)
+        {
+            <div class="transaction-card">
+                <div class="transaction-card-header">
+                    Transaction ID: @transaction.TransactionID
+                </div>
+                <div class="transaction-card-body">
+                    <dl class="transaction-details row">
+                        <dt class="col-sm-4">Transaction Date</dt>
+                        <dd class="col-sm-8">@transaction.TransactionDate?.ToString("dd-MM-yyyy")</dd>
+
+                        <dt class="col-sm-4">Chalen No</dt>
+                        <dd class="col-sm-8">@transaction.ChalenNo</dd>
+
+                        <dt class="col-sm-4">Tax Amount</dt>
+                        <dd class="col-sm-8">@transaction.TaxAmt</dd>
+
+                        <dt class="col-sm-4">Paid Amount</dt>
+                        <dd class="col-sm-8">@transaction.PaidAmt</dd>
+
+                        <dt class="col-sm-4">Balance Amount</dt>
+                        <dd class="col-sm-8">@transaction.BalanceAmt</dd>
+
+                        <dt class="col-sm-4">Is Completed</dt>
+                        <dd class="col-sm-8">@transaction.IsCompleted</dd>
+
+                        <dt class="col-sm-4">Tax Office</dt>
+                        <dd class="col-sm-8">@transaction.TaxOffice</dd>
+
+                        <dt class="col-sm-4">Tax Officer</dt>
+                        <dd class="col-sm-8">@transaction.TaxOfficer</dd>
+
+                        <dt class="col-sm-4">Note</dt>
+                        <dd class="col-sm-8">@transaction.Note</dd>
+                    </dl>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="no-transactions">
+            <h4>No completed transactions found.</h4>
+        </div>
+    }
+</div>

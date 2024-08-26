@@ -6,6 +6,8 @@ namespace CTSolution.Models
     {
         [Key]
         public int PurTransactionPkid { get; set; }
+
+       
         public string? TransactionID { get; set; } 
 
         public DateTime? TransactionDate { get; set; } 

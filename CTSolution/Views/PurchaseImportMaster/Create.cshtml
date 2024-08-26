@@ -1,49 +1,59 @@
 ﻿@model CTSolution.Models.PurchaseImportMaster
 
-<h1>Create Purchase Import Master</h1>
+@{
+    ViewData["Title"] = "Create Purchase Import Master";
+}
+
+<h1>@ViewData["Title"]</h1>
 
 <form asp-action="Create">
-    @Html.HiddenFor(model => model.TransactionID, new { Value = Model.TransactionID ?? DateTime.Now.ToString("yyyyMMddHHmmssfff") })
+    <!-- Hidden field for TransactionID -->
+    @Html.HiddenFor(model => model.TransactionID)
+
     <div class="form-group">
         <label asp-for="PTK_FormNo"></label>
         <input asp-for="PTK_FormNo" class="form-control" value="ပတခ (ကသခ) ၀၅-၀၂" readonly />
         <span asp-validation-for="PTK_FormNo" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="ImporterPkid"></label>
         <select asp-for="ImporterPkid" class="form-control" asp-items="ViewBag.Importers"></select>
         <span asp-validation-for="ImporterPkid" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="DeclarationFormNo"></label>
         <input asp-for="DeclarationFormNo" class="form-control" />
         <span asp-validation-for="DeclarationFormNo" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="DeclarationFormDate"></label>
         <input asp-for="DeclarationFormDate" class="form-control" type="date" />
         <span asp-validation-for="DeclarationFormDate" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="TransactionDate"></label>
-        <input asp-for="TransactionDate" class="form-control" type="date" />
-        <span asp-validation-for="TransactionDate" class="text-danger"></span>
-    </div>
+
+    <!-- TransactionDate is auto-set on the server side -->
+    <input asp-for="TransactionDate" type="hidden" value="@DateTime.Now.ToString("yyyyMMddHHmmssfff")" />
+
     <div class="form-group">
         <label asp-for="TaxOffice"></label>
         <input asp-for="TaxOffice" class="form-control" />
         <span asp-validation-for="TaxOffice" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="TaxOfficer"></label>
         <input asp-for="TaxOfficer" class="form-control" />
         <span asp-validation-for="TaxOfficer" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Note"></label>
         <textarea asp-for="Note" class="form-control"></textarea>
         <span asp-validation-for="Note" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary">Next</button>
+    <button type="submit" class="btn btn-primary">Save</button>
 </form>

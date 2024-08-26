@@ -25,13 +25,13 @@ namespace CTSolution.Controllers
         // GET: TaxPayerInfo/Create
         public IActionResult Create()
         {
-            // List of business types
+            
             var businessTypes = new List<string> { "Importer", "Exporter", "Manufacturer", "Wholesaler", "Retailer"};
 
-            // Pass business types to the view using ViewData
+           
             ViewData["BusinessTypes"] = new SelectList(businessTypes);
 
-            return View();
+            return View(new TaxPayerInfo());
         }
 
 
@@ -40,8 +40,7 @@ namespace CTSolution.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(TaxPayerInfo taxPayerInfo)
         {
-            if (ModelState.IsValid)
-            {
+
                 try
                 {
                     _context.Add(taxPayerInfo);
@@ -53,7 +52,6 @@ namespace CTSolution.Controllers
                     // Handle exceptions
                     ModelState.AddModelError("", "Unable to save changes. Try again later.");
                 }
-            }
             ViewData["BusinessTypes"] = TaxPayerInfo.BusinessTypes;
             return View(taxPayerInfo);
         }
@@ -92,8 +90,7 @@ namespace CTSolution.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+
                 try
                 {
                     _context.Update(taxPayerInfo);
@@ -111,7 +108,6 @@ namespace CTSolution.Controllers
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
 
             var businessTypes = new List<string> {"Importer", "Exporter", "Manufacturer", "Wholesaler", "Retailer" };
 

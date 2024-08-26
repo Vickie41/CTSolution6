@@ -2,9 +2,7 @@
 
 <h1>Purchase Transactions</h1>
 
-<p>
-    <a href="@Url.Action("Create", "PurchaseTransaction", new { transactionID = ViewBag.TransactionID, transactionDate = ViewBag.TransactionDate, taxOffice = ViewBag.TaxOffice, taxofficer = ViewBag.TaxOfficer, taxAmt = ViewBag.TaxAmt })" class="btn btn-primary">Create New</a>
-</p>
+
 
 <table class="table">
     <thead>
@@ -53,7 +51,7 @@
                     @Html.DisplayFor(modelItem => item.IsCompleted)
                 </td>
                 <td>
-                    |
+                    
                     <a asp-action="Delete" asp-route-id="@item.TransactionID" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
