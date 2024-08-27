@@ -20,8 +20,8 @@ namespace CTSolution.Models
 
         public DbSet<PurchaseTransaction> PurchaseTransaction { get; set; }
 
-       
 
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

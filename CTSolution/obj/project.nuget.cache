@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ADwbXHuqhZ1U5Nlz1E7WevL1ksblBg8iv5Jb2wLJaDW9Yd0m3hWD2yFhfhs4fK6wQHlTaTA+MC7oSxYi3EVQuA==",
+  "dgSpecHash": "y0/9eGk9tFMilLqMEjogStq3XUeTgZoijN9c9Hsq8kG9sayXK/JVgBOt3w/IkQfK9XnP6zdv3Gssf4T2pUSuYg==",
   "success": true,
   "projectFilePath": "D:\\Su Myat Tun\\Testing\\CTSolutionProject6\\CTSolution\\CTSolution.csproj",
   "expectedPackageFiles": [
@@ -71,6 +71,7 @@
     "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.1.1\\microsoft.aspnetcore.http.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.1.1\\microsoft.aspnetcore.http.extensions.2.1.1.nupkg.sha512",
     "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.1.1\\microsoft.aspnetcore.http.features.2.1.1.nupkg.sha512",
+    "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.1.39\\microsoft.aspnetcore.identity.2.1.39.nupkg.sha512",
     "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.33\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.33.nupkg.sha512",
     "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\kaung\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.1.1\\microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",

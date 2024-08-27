@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Su Myat Tun\Testing\CTSolutionProject6\CTSolution
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Su Myat Tun/Testing/CTSolutionProject6/CTSolution/Views/Account/LoginView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpblZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Su Myat Tun/Testing/CTSolutionProject6/CTSolution/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Su Myat Tun/Testing/CTSolutionProject6/CTSolution/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Su Myat Tun/Testing/CTSolutionProject6/CTSolution/Views/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Su Myat Tun/Testing/CTSolutionProject6/CTSolution/Views/Shared/_ValidationScriptsPartial.cshtml]

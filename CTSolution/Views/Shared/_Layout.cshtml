@@ -10,7 +10,7 @@
     <style>
         body {
             font-size: .875rem;
-            background-color: #f0f4f8; /* Soft light background */
+            background-color: #f0f4f8;
             color: #333;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -20,19 +20,19 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 100;
             width: 220px;
-            background-color: #ffffff; /* Clean white background */
+            background-color: #ffffff;
             color: #333;
             padding: 20px;
-            border-right: 1px solid #ddd; /* Light border for separation */
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-right: 1px solid #ddd;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
         }
 
             .sidebar h4 {
                 font-size: 1.25rem;
                 margin-bottom: 20px;
-                color: #5b5b5b; /* Soft gray */
+                color: #5b5b5b;
             }
 
             .sidebar a {
@@ -40,64 +40,82 @@
                 text-decoration: none;
                 display: block;
                 padding: 10px;
-                border-radius: 5px; /* Rounded corners */
+                border-radius: 5px;
                 transition: background-color 0.3s ease;
             }
 
                 .sidebar a:hover {
-                    background-color: #e7f1ff; /* Light blue hover effect */
+                    background-color: #e7f1ff;
                 }
 
         .main-content {
             margin-left: 220px;
             padding: 20px;
             transition: margin-left 0.3s ease;
+            background-color: #f9fafc;
+            min-height: 100vh;
         }
 
         .footer {
             padding: 20px 0;
             width: 100%;
-            background-color: #ffffff; /* Clean white background */
-            color: #5b5b5b; /* Soft gray */
-            border-top: 1px solid #ddd; /* Light border for separation */
+            background-color: #ffffff;
+            color: #5b5b5b;
+            border-top: 1px solid #ddd;
             text-align: center;
             position: relative;
         }
 
             .footer a {
-                color: #007bff; /* Calming blue */
+                color: #007bff;
+                text-decoration: none;
             }
 
                 .footer a:hover {
-                    color: #0056b3; /* Darker blue for hover effect */
+                    color: #0056b3;
                 }
     </style>
-    @RenderSection("Styles", required: false) <!-- This allows custom styles in individual views -->
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <div class="sidebar">
         <h4>Tax Credit System</h4>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                <a class="nav-link" asp-controller="Dashboard" asp-action="Index">ပင်မစာမျက်နှာ</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-controller="TaxPayerInfo" asp-action="Index">Tax Payer Info</a>
+                <a class="nav-link" asp-controller="TaxPayerInfo" asp-action="Index">အခွန်ထမ်းစာရင်း</a>
             </li>
+            <!-- Start of Nested Menu -->
             <li class="nav-item">
-                <a class="nav-link" asp-controller="PurchaseImportMaster" asp-action="Index">Import Master</a>
+                <a class="nav-link" data-bs-toggle="collapse" href="#collapseImport" role="button" aria-expanded="false" aria-controls="collapseImport">
+                    ပြည်ပတင်သွင်း
+                </a>
+                <ul class="collapse nav flex-column ms-3" id="collapseImport">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="PurchaseImportMaster" asp-action="Index">ပြည်ပတင်သွင်းအခွန်စာရင်း</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="PurchaseImportDetail" asp-action="Index">ကုန်ပစ္စည်းအသေးစိတ်စာရင်း</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="Index">အခွန်ပေးသွင်းငွေစာရင်း</a>
+                    </li>
+                </ul>
             </li>
+            <!-- End of Nested Menu -->
+            <a class="nav-link" data-bs-toggle="collapse" href="#collapseImport" role="button" aria-expanded="false" aria-controls="collapseImport">
+                ငွေပေးချေပြီးစာရင်း
+            </a>
+            <ul class="collapse nav flex-column ms-3" id="collapseImport">
             <li class="nav-item">
-                <a class="nav-link" asp-controller="PurchaseImportDetail" asp-action="Index">Import Detail</a>
+                    <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="LastCompletedTransaction">ပြည်ပတင်သွင်းအခွန်ငွေပေးချေပြီးစာရင်း</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="Index">Purchase Transaction</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="PurchaseTransaction" asp-action="LastCompletedTransaction">Completed Transactions</a>
-            </li>
+            </ul>
         </ul>
     </div>
+
     <div class="main-content">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -1,13 +1,11 @@
 ﻿@model CTSolution.Models.PurchaseImportMaster
 
-<h1>Purchase Import Master Details</h1>
+<h1>ပြည်ပတင်သွင်းအခွန်စာရင်း</h1>
 
 <div>
-    <h4>Purchase Import Master</h4>
+    <h4>ပြည်ပတင်သွင်းအခွန်စာရင်း</h4>
     <div>
         <dl class="row">
-            
-           
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.ImporterPkid)
             </dt>
@@ -52,81 +50,47 @@
             </dd>
         </dl>
     </div>
-    <p>
-        <a asp-action="Edit" asp-route-id="@Model.PurchaseImportPkid" class="btn btn-warning">Edit</a>
-        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-    </p>
-</div> 
 
-
-
-
-@*<h1>Purchase Import Master Details</h1>
-
-<div>
-    <h4>Purchase Import Master</h4>
-    <div>
-        <dl class="row">
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.ImporterPkid)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.PersonName)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DeclarationFormNo)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.DeclarationFormNo)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.DeclarationFormDate)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.DeclarationFormDate.ToString("dd-MM-yyyy"))</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.TransactionDate)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.TransactionDate.ToString("dd-MM-yyyy"))</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.TaxOffice)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.TaxOffice)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.TaxOfficer)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.TaxOfficer)</dd>
-            <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Note)</dt>
-            <dd class="col-sm-10">@Html.DisplayFor(model => model.Note)</dd>
-        </dl>
-    </div>
-    <p>
-        <a asp-action="Edit" asp-route-id="@Model.PurchaseImportPkid" class="btn btn-warning">Edit</a>
-        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-    </p>
-</div>
-
-<div>
     <h4>Purchase Import Details</h4>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().GoodsServicesName)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().UnitType)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().Qty)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().ImportValue)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().ValueOnLand)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().TaxRate)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().TaxAmt)</th>
-                <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().Note)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var detail in Model.PurchaseImportDetail)
-            {
+    @if (Model.PurchaseImportDetail != null && Model.PurchaseImportDetail.Any())
+    {
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => detail.GoodsServicesName)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.UnitType)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.Qty)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.ImportValue)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.ValueOnLand)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.TaxRate)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.TaxAmt)</td>
-                    <td>@Html.DisplayFor(modelItem => detail.Note)</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@detail.PurchaseImportDetailPkid" class="btn btn-primary btn-sm">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@detail.PurchaseImportDetailPkid" class="btn btn-danger btn-sm">Delete</a>
-                    </td>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().GoodsServicesName)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().UnitType)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().Qty)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().ImportValue)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().ValueOnLand)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().TaxRate)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().TaxAmt)</th>
+                    <th>@Html.DisplayNameFor(model => model.PurchaseImportDetail.First().Note)</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.PurchaseImportDetail)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => detail.GoodsServicesName)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.UnitType)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.Qty)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.ImportValue)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.ValueOnLand)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.TaxRate)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.TaxAmt)</td>
+                        <td>@Html.DisplayFor(modelItem => detail.Note)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No details available.</p>
+    }
 
-<p>
-    <a asp-action="Create" asp-route-id="@Model.PurchaseImportPkid" class="btn btn-success">Add Detail</a>
-</p> *@
+    <p>
+        <a asp-action="Edit" asp-route-id="@Model.PurchaseImportPkid" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </p>
+</div>

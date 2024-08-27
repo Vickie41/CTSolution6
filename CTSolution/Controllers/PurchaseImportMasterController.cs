@@ -218,57 +218,24 @@ namespace CTSolution.Controllers
         }
 
         // GET: PurchaseImportMaster/Detail/5
-        public async Task<IActionResult> Details (int id)
+        public async Task<IActionResult> Details(int id)
         {
             var purchaseImportMaster = await _context.PurchaseImportMaster
-                .FirstOrDefaultAsync(m => m.PurchaseImportPkid == id);
+                .Include(p => p.PurchaseImportDetail) // Ensure to include the details
+                .FirstOrDefaultAsync(p => p.PurchaseImportPkid == id);
+
             if (purchaseImportMaster == null)
             {
                 return NotFound();
             }
+
+            // Debugging
+            Console.WriteLine($"Details count: {purchaseImportMaster.PurchaseImportDetail.Count}");
 
             return View(purchaseImportMaster);
         }
 
 
-        /*public async Task<IActionResult> Details(int id)
-        {
-            var purchaseImportMaster = await _context.PurchaseImportMaster
-       .Include(p => p.TaxPayerInfo)  
-       .FirstOrDefaultAsync(m => m.PurchaseImportPkid == id);
-
-            if (purchaseImportMaster == null)
-            {
-                return NotFound();
-            }
-
-           
-            var purchaseImportDetails = await (from detail in _context.PurchaseImportDetail
-                                               join payer in _context.TaxPayerInfo
-                                               on purchaseImportMaster.ImporterPkid equals payer.TaxPayerPkid
-                                               where detail.PurchaseImportDetailPkid == id
-                                               select new PurchaseImportDetail
-                                               {
-                                                   PurchaseImportDetailPkid = detail.PurchaseImportDetailPkid,
-                                                   GoodsServicesName = detail.GoodsServicesName,
-                                                   UnitType = detail.UnitType,
-                                                   Qty = detail.Qty,
-                                                   ImportValue = detail.ImportValue,  
-                                                   ValueOnLand = detail.ValueOnLand, 
-                                                   TaxRate = detail.TaxRate,
-                                                   TaxAmt = detail.TaxAmt,
-                                                   Note = detail.Note,
-                                                   PersonName = payer.PersonName
-                                               }).ToListAsync();
-
-            var viewModel = new PurchaseImportMasterDetailsViewModel
-            {
-                PurchaseImportMaster = purchaseImportMaster,
-                PurchaseImportDetails = purchaseImportDetails  
-            };
-
-            return View(viewModel);
-        }*/
 
         private bool PurchaseImportMasterExists(int id)
         {

@@ -1,44 +1,87 @@
 ﻿@model CTSolution.Models.DashboardViewModel
 
-<div class="container">
-    <h1>Dashboard</h1>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Dashboard</h1>
+
     <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div class="card-header">
-                    Total Transactions
+        <!-- Total Transactions Card -->
+        <div class="col-lg-4 mb-4">
+            <div class="card border-light rounded-lg shadow-lg">
+                <div class="card-header bg-gradient-primary text-white">
+                    <h5 class="mb-0">Total Transactions</h5>
                 </div>
-                <div class="card-body">
-                    <h2>@Model.TotalTransactions</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div class="card-header">
-                    Total Tax Collected
-                </div>
-                <div class="card-body">
-                    <h2>@Model.TotalTaxCollected.ToString("C")</h2>
+                <div class="card-body text-center">
+                    <h3 class="mb-0">@Model.TotalTransactions</h3>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div class="card-header">
-                    Recent Transactions
+
+        <!-- Total Tax Collected Card -->
+        <div class="col-lg-4 mb-4">
+            <div class="card border-light rounded-lg shadow-lg">
+                <div class="card-header bg-gradient-success text-white">
+                    <h5 class="mb-0">Total Tax Collected</h5>
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="mb-0">@Model.TotalTaxCollected.ToString("C")</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Transactions Card -->
+        <div class="col-lg-4 mb-4">
+            <div class="card border-light rounded-lg shadow-lg">
+                <div class="card-header bg-gradient-info text-white">
+                    <h5 class="mb-0">Recent Transactions</h5>
                 </div>
                 <div class="card-body">
-                    <ul class="list-group">
+                    <div class="list-group">
                         @foreach (var transaction in Model.RecentTransactions)
                         {
-                            <li class="list-group-item">
-                                <strong>@transaction.Date.ToShortDateString()</strong>: @transaction.Amount.ToString("C")
-                            </li>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <span>@transaction.Date.ToShortDateString()</span>
+                                <span class="badge bg-primary rounded-pill">@transaction.Amount.ToString("C")</span>
+                            </a>
                         }
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Optional: Include custom CSS for additional styling -->
+<style>
+    .card-header {
+        background: linear-gradient(135deg, #007bff, #00c851);
+        border-bottom: 1px solid rgba(0,0,0,0.125);
+    }
+
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #007bff, #0056b3);
+    }
+
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #28a745, #218838);
+    }
+
+    .bg-gradient-info {
+        background: linear-gradient(135deg, #17a2b8, #138496);
+    }
+
+    .card-body h3 {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .list-group-item {
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.75rem 1.25rem;
+    }
+
+        .list-group-item:hover {
+            background-color: #f8f9fa;
+        }
+</style>

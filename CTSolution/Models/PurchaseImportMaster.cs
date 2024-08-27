@@ -44,7 +44,7 @@ namespace CTSolution.Models
         [Display(Name = "မှတ်ချက်")]
         public string Note { get; set; }
 
-        public ICollection<PurchaseImportDetail> PurchaseImportDetail { get; set; }
+        public ICollection<PurchaseImportDetail> PurchaseImportDetail { get; set; } = new List<PurchaseImportDetail>();
 
         public TaxPayerInfo TaxPayerInfo { get; set; }
 

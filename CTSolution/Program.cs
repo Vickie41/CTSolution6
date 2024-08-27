@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using CTSolution.Models;
 using CTSolution.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,11 +10,12 @@ builder.Services.AddDbContext<ApplicationDbContextcs>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add Identity services
-/*builder.Services.AddDefaultIdentity<IdentityUser>()
-    .AddEntityFrameworkStores<ApplicationDbContextcs>();*/
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContextcs>()
+    .AddDefaultTokenProviders();
 
-builder.Services.AddScoped<DashboardService>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<DashboardService, DashboardService>();
 
 var app = builder.Build();
 
@@ -30,12 +31,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication(); // Add this line to enable authentication
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=LoginView}/{id?}");
 
 app.Run();
-

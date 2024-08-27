@@ -9,6 +9,7 @@
       "CTSolution/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "2.1.16",
+          "Microsoft.AspNetCore.Identity": "2.1.39",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.33",
           "Microsoft.EntityFrameworkCore": "6.0.33",
           "Microsoft.EntityFrameworkCore.Design": "6.0.33",
@@ -687,6 +688,14 @@
       "Microsoft.AspNetCore.Http.Features/2.1.1": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
+      "Microsoft.AspNetCore.Identity/2.1.39": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.1.16",
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "6.0.33",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.1.1",
+          "Microsoft.Extensions.Identity.Core": "6.0.33"
         }
       },
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.33": {
@@ -3063,6 +3072,13 @@
       "sha512": "sha512-VklZ7hWgSvHBcDtwYYkdMdI/adlf7ebxTZ9kdzAhX+gUs5jSHE9mZlTamdgf9miSsxc1QjNazHXTDJdVPZKKTw==",
       "path": "microsoft.aspnetcore.http.features/2.1.1",
       "hashPath": "microsoft.aspnetcore.http.features.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity/2.1.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6cAG8PhFERXqbf4lAjoke3r7/7K4kIBldFsjcPK3/rnhi4aNXHa7TdOirS40s0zY38xd1MT97Neon/dkTIjdBQ==",
+      "path": "microsoft.aspnetcore.identity/2.1.39",
+      "hashPath": "microsoft.aspnetcore.identity.2.1.39.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.33": {
       "type": "package",
