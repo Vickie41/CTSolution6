@@ -42,6 +42,7 @@ namespace CTSolution.Controllers
             foreach (PurchaseImportMaster purchaseImportMaster in purchaseImportMasters)
             {
                 Console.WriteLine("trans id......................." + purchaseImportMaster.TransactionID);
+                Console.WriteLine("PersonName......................." + purchaseImportMaster.PersonName);
                 PurchaseImportDetail purchaseImportDetail = _context.PurchaseImportDetail.FirstOrDefault(p => p.TransactionID == purchaseImportMaster.TransactionID);
                 if(purchaseImportDetail != null)
                 {
@@ -221,7 +222,8 @@ namespace CTSolution.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var purchaseImportMaster = await _context.PurchaseImportMaster
-                .Include(p => p.PurchaseImportDetail) // Ensure to include the details
+                .Include(p => p.PurchaseImportDetail) 
+                .Include(p => p.TaxPayerInfo)// Ensure to include the details
                 .FirstOrDefaultAsync(p => p.PurchaseImportPkid == id);
 
             if (purchaseImportMaster == null)

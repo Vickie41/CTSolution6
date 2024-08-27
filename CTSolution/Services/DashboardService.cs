@@ -16,7 +16,7 @@ namespace CTSolution.Services
         {
             var totalTransactions = await _context.PurchaseTransaction.CountAsync();
             var totalTaxCollected = await _context.PurchaseTransaction
-                .SumAsync(t => t.TaxAmt ?? 0); // Handle nullable decimal
+                .SumAsync(t => t.PaidAmt ?? 0); // Handle nullable decimal
 
             var recentTransactions = await _context.PurchaseTransaction
                 .OrderByDescending(t => t.TransactionDate)
@@ -26,7 +26,7 @@ namespace CTSolution.Services
                     // Assuming TransactionID is a string and not nullable
                     TransactionId = string.IsNullOrEmpty(t.TransactionID) ? "N/A" : t.TransactionID,
                     Date = t.TransactionDate ?? DateTime.MinValue, // Handle nullable DateTime
-                    Amount = t.TaxAmt ?? 0 // Handle nullable decimal
+                    Amount = t.PaidAmt ?? 0 // Handle nullable decimal
                 })
                 .ToListAsync();
 
