@@ -11,7 +11,7 @@
     public class RecentTransaction
     {
         public string TransactionId { get; set; }
-        public DateTime TransactionDate { get; set; }
+        public DateTime Date { get; set; }
         public decimal Amount { get; set; }
     }
 }
