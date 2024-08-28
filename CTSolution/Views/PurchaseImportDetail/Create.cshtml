@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">ပြည်ပတင်သွင်းကုန်ပစ္စည်းစာရင်းသွင်းရန်</h1>
+        <h5 class="mb-4">ပြည်ပတင်သွင်းကုန်ပစ္စည်းစာရင်းသွင်းရန်</h5>
 
         <form asp-action="Create">
             @Html.HiddenFor(model => model.TransactionID, new { Value = Model.TransactionID ?? DateTime.Now.ToString("yyyyMMddHHmmssfff") })

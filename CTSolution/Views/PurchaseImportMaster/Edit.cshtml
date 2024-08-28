@@ -1,6 +1,6 @@
 ﻿@model CTSolution.Models.PurchaseImportMaster
 
-<h1>ပြည်ပတင်သွင်းအခွန်စာရင်းပြင်ရန်</h1>
+<h5>ပြည်ပတင်သွင်းအခွန်စာရင်းပြင်ရန်</h5>
 
 <form asp-action="Edit">
     @Html.AntiForgeryToken()
@@ -10,9 +10,10 @@
     @Html.HiddenFor(model => model.TransactionID, new { Value = Model.TransactionID ?? DateTime.Now.ToString("yyyyMMddHHmmssfff") })
     <div class="form-group">
         @Html.LabelFor(model => model.PTK_FormNo)
-        @Html.TextBoxFor(model => model.PTK_FormNo, new { @class = "form-control" })
+        @Html.TextBoxFor(model => model.PTK_FormNo, new { @class = "form-control", @readonly = "readonly" })
         @Html.ValidationMessageFor(model => model.PTK_FormNo)
     </div>
+
     <div class="form-group">
         @Html.LabelFor(model => model.ImporterPkid)
         @Html.DropDownListFor(model => model.ImporterPkid, (SelectList)ViewBag.Importers, "Select Importer", new { @class = "form-control" })

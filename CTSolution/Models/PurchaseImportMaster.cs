@@ -48,7 +48,26 @@ namespace CTSolution.Models
 
         public TaxPayerInfo TaxPayerInfo { get; set; }
 
+        [Display(Name = "ကျသင့်အခွန်နှုန်း (ကျပ်)")]
         [NotMapped]
         public decimal TaxAmt { get; set; }
+
+        [Display(Name = "အခွန်ထမ်းမှတ်ပုံတင်အမှတ် (TIN)")]
+        [NotMapped]
+        public string TIN_Number { get; set; }
+
+
+        [Display(Name = "သွင်းကုန်လိုင်စင်အမှတ် ")]
+        [NotMapped]
+        public string CommercialLicense { get; set; }
+
+
+        [Display(Name = "ပေးသွင်းအခွန်")]
+        [NotMapped]
+        public decimal? PaidAmt { get; set; }
+
+        [Display(Name = "ကျန်ရှိအခွန်")]
+        [NotMapped]
+        public decimal? BalanceAmt { get; set; }
     }
 }

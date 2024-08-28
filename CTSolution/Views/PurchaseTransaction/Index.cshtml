@@ -51,8 +51,8 @@
                     @Html.DisplayFor(modelItem => item.IsCompleted)
                 </td>
                 <td>
-                    
-                    <a asp-action="Delete" asp-route-id="@item.TransactionID" class="btn btn-danger">Delete</a>
+
+                    <a asp-action="Delete" asp-route-id="@item.TransactionID" class="btn btn-danger"><i class="fas fa-trash"></i>Delete</a>
                 </td>
             </tr>
         }

@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">@ViewData["Title"]</h1>
+        <h5 class="mb-4">@ViewData["Title"]</h5>
 
         
 
@@ -44,6 +44,9 @@
                         <td>@Html.DisplayFor(modelItem => item.TaxRate)</td>
                         <td>@Html.DisplayFor(modelItem => item.TaxAmt)</td>
                         <td>@Html.DisplayFor(modelItem => item.Note)</td>
+
+
+
                         <td>
                             <a href="@Url.Action("Edit", "PurchaseImportDetail", new { id = item.PurchaseImportDetailPkid })" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i> Edit
